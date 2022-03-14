@@ -8,7 +8,7 @@ export const PasswordInput = (props: PasswordInputProps) => {
   const { isOpen: isShowingPassword, onToggle } = useDisclosure();
   const { t } = useTranslation();
   return (
-    <InputGroup>
+    <InputGroup position={"relative"}>
       <Input
         {...props}
         type={isShowingPassword ? "text" : "password"}
