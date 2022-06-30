@@ -36,7 +36,8 @@
     "@vygruppen/spor-provider-react": "*",
     "@vygruppen/spor-tab-react": "*",
     "@vygruppen/spor-typography-react": "*",
-    "@vygruppen/spor-stepper-react": "*"
+    "@vygruppen/spor-stepper-react": "*",
+    "@vygruppen/spor-message-box-react": "*"
   },
   "devDependencies": {
     "@chakra-ui/react": "^1.7.3",
