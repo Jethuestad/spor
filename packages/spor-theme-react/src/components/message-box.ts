@@ -1,12 +1,15 @@
+import { MenuDescendantsProvider } from "@chakra-ui/react";
 import type {
   SystemStyleFunction,
   SystemStyleObject,
 } from "@chakra-ui/theme-tools";
 
 const baseStyle: SystemStyleObject = {
-  // felles
   padding: 2,
   borderRadius: "md",
+  textAlign: "left",
+  maxWidth: "339px",
+  height: 8,
 };
 
 const variantSuccess: SystemStyleFunction = (props) => {

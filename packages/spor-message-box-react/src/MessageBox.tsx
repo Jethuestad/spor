@@ -1,5 +1,5 @@
 import React from "react";
-import { useStyleConfig, Box } from "@chakra-ui/react";
+import { useStyleConfig, Box, Flex } from "@chakra-ui/react";
 import {
   InformationOutline18Icon,
   SuccessOutline18Icon,
@@ -16,21 +16,23 @@ export const MessageBox = (props: MessageBoxProps) => {
   const styles = useStyleConfig("MessageBox", { variant: props.variant });
   return (
     <Box __css={styles}>
-      {getIcon({ variant: props.variant })}
-      {props.children}
+      <Flex alignItems="center">
+        {getIcon({ variant: props.variant })}
+        {props.children}
+      </Flex>
     </Box>
   );
 };
 
-type iconProps = {
-  variant: "suksess" | "error" | "info";
+type IconProps = {
+  variant: MessageBoxProps["variant"];
 };
 
-function getIcon(props: iconProps) {
+function getIcon(props: IconProps) {
   const iconNames = {
     suksess: <SuccessOutline18Icon />,
     error: <ErrorOutline18Icon />,
     info: <InformationOutline18Icon />,
   };
-  return <div>{iconNames[props.variant]}</div>;
+  return <Box mr={1.5}>{iconNames[props.variant]}</Box>;
 }
