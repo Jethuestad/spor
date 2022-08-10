@@ -44,7 +44,11 @@ module.exports = {
         "packages/spor-modal-react-native/",
         "packages/spor-alert-react-native/",
         "packages/spor-linjetag-react-native/",
+<<<<<<< HEAD
         "packages/spor-datepicker-react/",
+=======
+        "packages/spor-link-react-native/",
+>>>>>>> 9988cb24 (Add new package of link component)
       ],
     },
   },
