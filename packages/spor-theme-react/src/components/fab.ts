@@ -10,9 +10,9 @@ const baseStyle: PartsStyleFunction<typeof parts> = (props) => ({
   container: {
     display: "flex",
     alignItems: "center",
-    py: 2,
-    pl: 2,
-    pr: props.isTextVisible ? 3 : 2,
+    py: 12,
+    pl: 12,
+    pr: props.isTextVisible ? 18 : 12,
     cursor: "pointer",
     overflowX: "hidden",
     whiteSpace: "nowrap",
@@ -43,7 +43,7 @@ const baseStyle: PartsStyleFunction<typeof parts> = (props) => ({
     zIndex: "sticky",
   },
   icon: {
-    mr: props.isTextVisible ? 1 : 0,
+    mr: props.isTextVisible ? 6 : 0,
   },
   text: {
     display: "flex",
