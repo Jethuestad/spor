@@ -37,8 +37,8 @@ const baseStyleButton: SystemStyleFunction = ({ theme }) => ({
 });
 
 const baseStylePanel: SystemStyleObject = {
-  pt: 2,
-  pb: 5,
+  pt: 12,
+  pb: 30,
   borderBottomRadius: "sm",
 };
 
@@ -109,31 +109,31 @@ const sizes: Record<string, PartsStyleObject<typeof parts>> = {
   sm: {
     button: {
       fontSize: "desktop.xs",
-      px: 2,
-      py: 1,
+      px: 12,
+      py: 6,
     },
     panel: {
-      px: 2,
+      px: 12,
     },
   },
   md: {
     button: {
       fontSize: "desktop.sm",
-      px: 3,
-      py: 1,
+      px: 18,
+      py: 6,
     },
     panel: {
-      px: 3,
+      px: 18,
     },
   },
   lg: {
     button: {
       fontSize: "desktop.sm",
-      px: 3,
-      py: 2,
+      px: 18,
+      py: 12,
     },
     panel: {
-      px: 3,
+      px: 18,
     },
   },
 };
