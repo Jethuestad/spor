@@ -24,7 +24,7 @@ const baseStyleContent: SystemStyleFunction = () => {
     [$arrowShadowColor.variable]: `colors.palette.blackAlpha.300`,
     color: "alias.white",
     borderRadius: "sm",
-    p: 1.5,
+    p: 9,
     zIndex: "inherit",
     maxWidth: "20em",
     _focus: {
@@ -43,11 +43,11 @@ const baseStyleFooter: SystemStyleObject = {};
 const baseStyleCloseButton: SystemStyleObject = {
   position: "absolute",
   borderRadius: "xs",
-  top: 1,
-  insetEnd: 1,
-  width: 2,
-  height: 2,
-  padding: 1,
+  top: 6,
+  insetEnd: 6,
+  width: 12,
+  height: 12,
+  padding: 6,
 };
 
 const baseStyleArrow: SystemStyleObject = {
@@ -70,14 +70,14 @@ const baseStyle: PartsStyleFunction<typeof parts> = (props) => ({
 const sizes: Record<string, PartsStyleObject<typeof parts>> = {
   sm: {
     content: {
-      px: 1.5,
-      py: 1,
+      px: 9,
+      py: 6,
     },
   },
   lg: {
     content: {
-      px: 3,
-      py: 2,
+      px: 18,
+      py: 12,
     },
   },
 };
