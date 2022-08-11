@@ -3,9 +3,9 @@ import Input from "./input";
 
 const baseStyle: SystemStyleFunction = (props) => ({
   ...Input.baseStyle(props).field,
-  minHeight: "80px",
+  minHeight: "5rem",
   lineHeight: "short",
-  py: 3,
+  py: 18,
   verticalAlign: "top",
   appearance: "none",
 });
