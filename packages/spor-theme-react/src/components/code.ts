@@ -7,7 +7,7 @@ const baseStyle: SystemStyleObject = {
   fontFamily: "monospace",
   fontSize: ["mobile.xs", "desktop.xs"],
   borderRadius: "xs",
-  px: 1,
+  px: 6,
 };
 
 export default {
