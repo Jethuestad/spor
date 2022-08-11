@@ -35,32 +35,32 @@ const baseStyleDialog: SystemStyleFunction = (props) => {
 };
 
 const baseStyleHeader: SystemStyleFunction = (props) => ({
-  px: 3,
-  pt: 6,
-  pb: 2,
+  px: 18,
+  pt: 36,
+  pb: 12,
   fontWeight: "bold",
   fontFamily: "body",
 });
 
 const baseStyleCloseButton: SystemStyleObject = {
   position: "absolute",
-  top: 3,
-  insetEnd: 3,
+  top: 18,
+  insetEnd: 18,
 };
 
 const baseStyleBody: SystemStyleFunction = (props) => {
   const { scrollBehavior } = props;
   return {
-    px: 3,
-    pb: 6,
+    px: 18,
+    pb: 36,
     flex: 1,
     overflow: scrollBehavior === "inside" ? "auto" : undefined,
   };
 };
 
 const baseStyleFooter: SystemStyleObject = {
-  px: 3,
-  pb: 3,
+  px: 18,
+  pb: 18,
 };
 
 const baseStyle: PartsStyleFunction<typeof parts> = (props) => ({
