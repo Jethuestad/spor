@@ -20,9 +20,7 @@ import {
   spacingShorthand,
   useTheme,
 } from "@shopify/restyle";
-import { TouchableOpacity, View } from "react-native";
-import { Box } from "@vygruppen/spor-layout-react-native";
-import { Button } from "@vygruppen/spor-react";
+import { Linking, Pressable } from "react-native";
 
 type Variant = VariantProps<Theme, "linkVariants", "variant">;
 const variant = createVariant({
@@ -37,23 +35,34 @@ const restyleFunctions = composeRestyleFunctions<Theme, RestyleProps>([
 ]);
 
 type LinkVariant = "primary" | "secondary" | "tertiary";
-type LinkProps = BaseProps;
+type LinkProps = BaseProps & ActionProps;
 
 type BaseProps = Exclude<RestyleProps, "variant"> & {
   variant: LinkVariant;
   children: string;
 };
 
+type ActionProps = WithURLProps;
+
+type WithURLProps = {
+  actionType: "button";
+  handlePress?: () => void;
+};
+
 export const Link = (props: LinkProps) => {
-  const { variant, children, ...rest } = props;
+  const { variant, children, actionType, handlePress, ...rest } = props;
   const { style } = useRestyle(restyleFunctions, {
     variant,
     ...rest,
   });
 
+  const url = "https://spor.cloud.vy.no/komponenter/oversikt";
+
   return (
-    <Text style={style as any} {...rest} onPress={props.handlePress}>
-{children}
-    </Text>
+    <Pressable onPress={() => Linking.openURL(url)}>
+      <Text style={style as any } {...rest}>
+        {children}
+      </Text>
+    </Pressable>
   );
 };

@@ -5,3 +5,4 @@ export * from "./card";
 export * from "./expandable";
 export * from "./message-box";
 export * from "./text";
+export * from "./link";

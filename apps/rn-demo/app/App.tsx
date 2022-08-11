@@ -7,6 +7,7 @@ import {
 import React from "react";
 import { SafeAreaView } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
+import { Link } from "@vygruppen/spor-link-react-native";
 
 /**
  * The entry point of the Spor RN demo app
@@ -31,6 +32,7 @@ const App = () => {
               forskjellige komponenter i Spor sitt designsystem for React
               Native.
             </Text>
+            <Link variant="primary">TEST</Link>
           </Stack>
         </SafeAreaView>
       </SafeAreaProvider>
