@@ -11,7 +11,7 @@ const baseStyle: SystemStyleObject = {
   whiteSpace: "nowrap",
   transitionProperty: "common",
   transitionDuration: "normal",
-  px: 3,
+  px: 18,
   _focus: {
     boxShadow: 0,
     outline: 0,
@@ -181,25 +181,25 @@ const variants = {
 
 const sizes: Record<string, SystemStyleObject> = {
   lg: {
-    height: 8,
-    minWidth: 8,
+    height: 54,
+    minWidth: 54,
     fontSize: "18px",
   },
   md: {
-    height: 7,
-    minWidth: 7,
+    height: 42,
+    minWidth: 42,
     fontSize: "18px",
   },
   sm: {
-    height: 6,
-    minWidth: 6,
+    height: 36,
+    minWidth: 36,
     fontSize: "16px",
   },
   xs: {
-    height: 5,
-    minWidth: 5,
+    height: 30,
+    minWidth: 30,
     fontSize: "16px",
-    px: 2,
+    px: 12,
   },
 };
 
