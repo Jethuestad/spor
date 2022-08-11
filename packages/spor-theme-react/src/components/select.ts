@@ -15,10 +15,10 @@ const baseStyleRoot: SystemStyleObject = {
   "& + label": {
     fontSize: ["mobile.sm", "desktop.sm"],
     top: "2px",
-    left: 3,
+    left: 18,
     zIndex: 2,
     position: "absolute",
-    my: 2,
+    my: 12,
     transformOrigin: "top left",
     transform: [
       "scale(0.825) translateY(-12px)",
@@ -30,15 +30,15 @@ const baseStyleRoot: SystemStyleObject = {
 const baseStyleField: SystemStyleFunction = (props) => ({
   ...Input.baseStyle(props).field,
   appearance: "none",
-  pt: "16px",
+  pt: "1rem",
   "option, optgroup": {
     background: "alias.white",
   },
 });
 const baseStyleIcon: SystemStyleObject = {
-  width: "30px",
-  height: "30px",
-  insetEnd: "0.5rem",
+  width: 30,
+  height: 30,
+  insetEnd: 9,
   position: "relative",
   color: "currentColor",
   strokeLinecap: "round",
