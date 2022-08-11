@@ -7,14 +7,14 @@ import { mode } from "@chakra-ui/theme-tools";
 
 const baseStyleRequiredIndicator: SystemStyleFunction = (props) => {
   return {
-    marginStart: 1,
+    marginStart: 6,
     color: mode("error.brightRed", "error.lightRed")(props),
   };
 };
 
 const baseStyleHelperText: SystemStyleFunction = (props) => {
   return {
-    mt: 2,
+    mt: 12,
     color: mode("alias.osloGrey", "palette.whiteAlpha.600")(props),
     lineHeight: "normal",
     fontSize: "sm",
