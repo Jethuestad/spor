@@ -37,12 +37,12 @@ const variants = {
 
 const sizes: Record<"sm" | "md", SystemStyleObject> = {
   sm: {
-    px: 2,
-    height: 4,
+    px: 12,
+    height: 24,
   },
   md: {
-    px: 3,
-    height: 5,
+    px: 18,
+    height: 30,
   },
 };
 
