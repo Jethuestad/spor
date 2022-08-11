@@ -1,20 +1,19 @@
 import tokens from "@vygruppen/spor-design-tokens";
 
 export const spacing = {
-  0.5: tokens.size.spacing.px[3].value,
-  1: tokens.size.spacing.px[6].value,
-  1.5: tokens.size.spacing.px[9].value,
-  2: tokens.size.spacing.px[12].value,
-  3: tokens.size.spacing.px[18].value,
-  4: tokens.size.spacing.px[24].value,
-  5: tokens.size.spacing.px[30].value,
-  6: tokens.size.spacing.px[36].value,
-  7: tokens.size.spacing.px[42].value,
-  8: tokens.size.spacing.px[54].value,
-  9: tokens.size.spacing.px[72].value,
-  10: tokens.size.spacing.px[90].value,
-  11: tokens.size.spacing.px[120].value,
-  12: tokens.size.spacing.px[180].value,
+  3: tokens.size.spacing["3"].value,
+  6: tokens.size.spacing["6"].value,
+  9: tokens.size.spacing["9"].value,
+  12: tokens.size.spacing["12"].value,
+  18: tokens.size.spacing["18"].value,
+  24: tokens.size.spacing["24"].value,
+  30: tokens.size.spacing["30"].value,
+  36: tokens.size.spacing["36"].value,
+  42: tokens.size.spacing["42"].value,
+  54: tokens.size.spacing["54"].value,
+  72: tokens.size.spacing["72"].value,
+  90: tokens.size.spacing["90"].value,
+  120: tokens.size.spacing["120"].value,
+  180: tokens.size.spacing["180"].value,
 };
-
 export const space = spacing;
