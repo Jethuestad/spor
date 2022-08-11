@@ -1,10 +1,10 @@
 export const alertColorScheme = {
   defaults: {
     borderRadius: "sm",
-    paddingLeft: 2,
-    paddingRight: 2,
-    paddingTop: 1.5,
-    paddingBottom: 1.5,
+    paddingLeft: 12,
+    paddingRight: 12,
+    paddingTop: 9,
+    paddingBottom: 9,
     width: "100%",
   },
   yellow: {
