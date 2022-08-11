@@ -26,7 +26,7 @@ const baseStyle: PartsStyleObject<typeof parts> = {
     },
   },
   caption: {
-    mt: 4,
+    mt: 24,
     fontFamily: "heading",
     textAlign: "center",
     fontWeight: "bold",
