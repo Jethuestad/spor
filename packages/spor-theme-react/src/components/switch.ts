@@ -40,7 +40,7 @@ const baseStyleThumb: SystemStyleObject = {
   },
 };
 
-const baseStyle: PartsStyleFunction<typeof parts> = (props) => ({
+const baseStyle: PartsStyleFunction<typeof parts> = () => ({
   container: {
     [$diff.variable]: diffValue,
     [$translateX.variable]: $diff.reference,
@@ -55,8 +55,8 @@ const baseStyle: PartsStyleFunction<typeof parts> = (props) => ({
 const sizes: Record<string, PartsStyleObject<typeof parts>> = {
   sm: {
     container: {
-      [$width.variable]: "54px",
-      [$height.variable]: "24px",
+      [$width.variable]: 54,
+      [$height.variable]: 24,
     },
     track: {
       borderRadius: "24px",
@@ -65,22 +65,22 @@ const sizes: Record<string, PartsStyleObject<typeof parts>> = {
   },
   md: {
     container: {
-      [$width.variable]: "66px",
-      [$height.variable]: "30px",
+      [$width.variable]: "4.125rem",
+      [$height.variable]: "1.875rem",
     },
     track: {
       borderRadius: "30px",
-      p: "3px",
+      p: 3,
     },
   },
   lg: {
     container: {
-      [$width.variable]: "78px",
-      [$height.variable]: "36px",
+      [$width.variable]: "4.875rem",
+      [$height.variable]: "2.25rem",
     },
     track: {
       borderRadius: "36px",
-      p: "3px",
+      p: 3,
     },
   },
 };
