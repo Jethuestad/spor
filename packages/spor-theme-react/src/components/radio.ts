@@ -20,8 +20,8 @@ const baseStyleContainer: SystemStyleObject = {
 
 const baseStyleControl: SystemStyleFunction = (props) => {
   return {
-    width: 4,
-    height: 4,
+    width: 24,
+    height: 24,
     backgroundColor: "alias.white",
     border: "2px solid",
     borderColor: "alias.primaryGreen",
