@@ -1,4 +1,3 @@
-import { spacing } from "../foundations/spacing";
 export const buttonVariants = {
   defaults: {
     borderWidth: 0,
@@ -6,7 +5,7 @@ export const buttonVariants = {
     alignItems: "center",
     justifyContent: "center",
     fontWeight: "bold",
-    px: 3,
+    paddingHorizontal: 18,
   },
   control: {
     backgroundColor: "darkTeal",
@@ -37,7 +36,7 @@ export const buttonVariants = {
     backgroundColor: "transparent",
     color: "darkGrey",
     fontWeight: "normal",
-    px: 0,
+    paddingHorizontal: 0,
   },
 };
 
@@ -72,24 +71,24 @@ export const buttonVariantsDisabled = {
 export const buttonSizes = {
   defaults: {},
   lg: {
-    height: spacing[8],
-    minWidth: spacing[7],
+    height: 54,
+    minWidth: 42,
     fontSize: 18,
   },
   md: {
-    height: spacing[7],
-    minWidth: spacing[7],
+    height: 42,
+    minWidth: 42,
     fontSize: 18,
   },
   sm: {
-    height: spacing[6],
-    minWidth: spacing[6],
+    height: 36,
+    minWidth: 36,
     fontSize: 16,
   },
   xs: {
-    height: spacing[5],
-    minWidth: spacing[5],
+    height: 30,
+    minWidth: 30,
     fontSize: 16,
-    px: 2,
+    paddingHorizontal: 12,
   },
 };
