@@ -28,8 +28,8 @@ const baseContainer: SystemStyleObject = {
 
 const baseStyleControl: SystemStyleFunction = () => {
   return {
-    width: 4,
-    height: 4,
+    width: 24,
+    height: 24,
     transitionProperty: "background, border-color",
     transitionDuration: "normal",
     backgroundColor: "white",
