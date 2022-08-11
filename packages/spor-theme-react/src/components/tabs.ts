@@ -18,7 +18,7 @@ const baseStyleTablist: SystemStyleFunction = (props) => {
   return {
     display: "flex",
     alignItems: "center",
-    gap: 0.5,
+    gap: 3,
     width: props.isFitted ? "fit-content" : "100%",
     ...getTablistColorSchemeProps(props),
   };
@@ -232,41 +232,41 @@ const baseStyle: PartsStyleFunction<typeof parts> = (props) => ({
 const sizes: Record<string, PartsStyleObject<typeof parts>> = {
   sm: {
     tablist: {
-      height: "30px",
-      p: "2px",
+      height: 30,
+      p: "0.125rem",
     },
     tab: {
-      px: 2,
+      px: 12,
       py: 0,
     },
   },
   md: {
     tablist: {
-      height: "36px",
-      p: 0.5,
+      height: 6,
+      p: 3,
     },
     tab: {
-      px: 2,
+      px: 12,
     },
   },
   lg: {
     tablist: {
-      height: "42px",
-      p: 0.5,
+      height: 42,
+      p: 3,
     },
     tab: {
       fontWeight: "bold",
-      px: 2,
+      px: 12,
     },
   },
   xl: {
     tablist: {
-      height: "54px",
-      p: "4px",
+      height: 8,
+      p: "0.25rem",
     },
     tab: {
       fontWeight: "bold",
-      px: 3,
+      px: 18,
     },
   },
 };
