@@ -21,8 +21,8 @@ const baseStyle: PartsStyleInterpolation<typeof parts> = ({ theme }) => ({
     transitionDuration: "fast",
     display: "flex",
     flex: 1,
-    px: 3,
-    py: 1.5,
+    px: 18,
+    py: 9,
     _hover: {
       boxShadow: getBoxShadowString({
         borderColor: theme.colors.alias.darkGrey,
@@ -65,7 +65,7 @@ const baseStyle: PartsStyleInterpolation<typeof parts> = ({ theme }) => ({
       borderColor: theme.colors.alias.darkGrey,
       borderWidth: 1,
     }),
-    width: 8,
+    width: 54,
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -113,8 +113,8 @@ const baseStyle: PartsStyleInterpolation<typeof parts> = ({ theme }) => ({
     position: "relative",
     transition: ".1s ease-in-out",
     userSelect: "none",
-    width: [6, 7],
-    height: [6, 7],
+    width: [36, 42],
+    height: [36, 42],
     transitionProperty: "common",
     transitionSpeed: "fast",
 
