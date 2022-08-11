@@ -2,8 +2,8 @@ import type { SystemStyleObject } from "@chakra-ui/theme-tools";
 
 const baseStyle: SystemStyleObject = {
   fontSize: "mobile.sm",
-  marginEnd: 3,
-  mb: 2,
+  marginEnd: 18,
+  mb: 12,
   transitionProperty: "common",
   transitionDuration: "normal",
   opacity: 1,
