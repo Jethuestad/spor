@@ -17,8 +17,8 @@ const containerStyle: SystemStyleFunction = (props) => ({
   color: "alias.darkTeal",
   display: "inline-flex",
   alignItems: "center",
-  fontSize: "16px",
-  px: 1,
+  fontSize: "1rem",
+  px: 6,
   _checked: {
     background: "alias.seaMist",
     boxShadow: `0 0 0 1px ${colors.alias.celadon}`,
@@ -36,7 +36,7 @@ const containerStyle: SystemStyleFunction = (props) => ({
 });
 
 const iconStyle: SystemStyleFunction = (props) => ({
-  mr: props.hasLabel ? 1 : 0,
+  mr: props.hasLabel ? 6 : 0,
 });
 
 const labelStyle: SystemStyleObject = {};
@@ -52,28 +52,28 @@ const sizes: Record<string, PartsStyleObject<typeof choiceChipAnatomy>> = {
     container: {
       borderRadius: "15px",
       height: "30px",
-      px: 1.5,
+      px: 9,
     },
   },
   md: {
     container: {
       borderRadius: "18px",
-      height: "36px",
-      px: 2,
+      height: 36,
+      px: 12,
     },
   },
   lg: {
     container: {
       borderRadius: "21px",
-      height: "42px",
-      px: 2,
+      height: 42,
+      px: 12,
     },
   },
   xl: {
     container: {
       borderRadius: "27px",
-      height: "54px",
-      px: 3,
+      height: 54,
+      px: 18,
     },
   },
 };
