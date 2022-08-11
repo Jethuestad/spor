@@ -38,32 +38,32 @@ const baseStyleDialog: SystemStyleFunction = (props) => {
 };
 
 const baseStyleHeader: SystemStyleFunction = (props) => ({
-  px: 5,
-  pt: 6,
-  pb: 2,
+  px: 30,
+  pt: 36,
+  pb: 12,
   fontWeight: "bold",
   fontFamily: "body",
 });
 
 const baseStyleCloseButton: SystemStyleObject = {
   position: "absolute",
-  top: 3,
-  insetEnd: 3,
+  top: 18,
+  insetEnd: 18,
 };
 
 const baseStyleBody: SystemStyleFunction = (props) => {
   const { scrollBehavior } = props;
   return {
-    px: 5,
-    pb: 6,
+    px: 30,
+    pb: 36,
     flex: 1,
     overflow: scrollBehavior === "inside" ? "auto" : undefined,
   };
 };
 
 const baseStyleFooter: SystemStyleObject = {
-  px: 3,
-  pb: 3,
+  px: 18,
+  pb: 18,
 };
 
 const baseStyle: PartsStyleFunction<typeof parts> = (props) => ({
@@ -84,10 +84,10 @@ function getSize(value: string): PartsStyleObject<typeof parts> {
   if (value === "full") {
     return {
       dialog: {
-        maxW: "100vw",
-        minH: "100vh",
+        maxWidth: "100vw",
+        minHeight: "100vh",
         "@supports(min-height: -webkit-fill-available)": {
-          minH: "-webkit-fill-available",
+          minHeight: "-webkit-fill-available",
         },
         my: 0,
       },
