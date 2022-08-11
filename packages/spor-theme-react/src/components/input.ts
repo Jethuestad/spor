@@ -13,8 +13,8 @@ const baseStyle: PartsStyleFunction<typeof parts> = (props) => ({
     transitionProperty: "common",
     transitionDuration: "fast",
     position: "relative",
-    px: 3,
-    height: "54px",
+    px: 18,
+    height: 8,
     fontSize: "18px",
 
     boxShadow: `inset 0 0 0 1px ${colors.outline.darkGrey}`,
@@ -44,12 +44,12 @@ const baseStyle: PartsStyleFunction<typeof parts> = (props) => ({
       left: props.paddingLeft || props.pl || 3,
       zIndex: 2,
       position: "absolute",
-      my: 2,
+      my: 12,
       transition: ".1s ease-out",
       transformOrigin: "top left",
     },
     "&:not(:placeholder-shown)": {
-      pt: "16px",
+      pt: "1rem",
       "& + label": {
         transform: "scale(0.825) translateY(-10px)",
       },
