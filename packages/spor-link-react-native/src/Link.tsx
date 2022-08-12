@@ -11,21 +11,22 @@ import { Text } from "@vygruppen/spor-typography-react-native";
 import { Theme } from "@vygruppen/spor-theme-react-native";
 import {
   SpacingProps,
-  SpacingShorthandProps,
   VariantProps,
   createVariant,
   useRestyle,
   composeRestyleFunctions,
   spacing,
-  spacingShorthand,
   useTheme,
 } from "@shopify/restyle";
-import { Linking, Pressable } from "react-native";
+import { Pressable, StyleProp, ViewStyle } from "react-native";
+import { Box } from "@vygruppen/spor-layout-react-native";
 
-type Variant = VariantProps<Theme, "linkVariants", "variant">;
 const variant = createVariant({
   themeKey: "linkVariants",
+  property: "variant",
 });
+
+type Variant = VariantProps<Theme, "linkVariants", "variant">;
 
 type RestyleProps = SpacingProps<Theme> & Variant;
 
@@ -35,34 +36,41 @@ const restyleFunctions = composeRestyleFunctions<Theme, RestyleProps>([
 ]);
 
 type LinkVariant = "primary" | "secondary" | "tertiary";
-type LinkProps = BaseProps & ActionProps;
 
-type BaseProps = Exclude<RestyleProps, "variant"> & {
+type LinkProps = Exclude<RestyleProps, "variant"> & {
   variant: LinkVariant;
   children: string;
+  onPress: () => void;
+  accessibilityLabel?: string;
+  defaultLinked?: boolean;
+  style?: StyleProp<ViewStyle>;
 };
 
-type ActionProps = WithURLProps;
-
-type WithURLProps = {
-  actionType: "button";
-  handlePress?: () => void;
-};
-
-export const Link = (props: LinkProps) => {
-  const { variant, children, actionType, handlePress, ...rest } = props;
-  const { style } = useRestyle(restyleFunctions, {
-    variant,
-    ...rest,
-  });
-
-  const url = "https://spor.cloud.vy.no/komponenter/oversikt";
+export const Link = ({
+  variant,
+  children,
+  onPress,
+  accessibilityLabel,
+  defaultLinked = false,
+  style,
+  ...props
+}: LinkProps) => {
+  const restyleProps: Record<string, any> = { ...props, variant };
+  const { style: restyleStyle } = useRestyle(restyleFunctions, restyleProps);
+  const [isPressed, setIsPressed] = useState(false);
+  const { linkVariantsActive } = useTheme();
+  const activeStyle = isPressed ? linkVariantsActive[variant] : {};
 
   return (
-    <Pressable onPress={() => Linking.openURL(url)}>
-      <Text style={style as any } {...rest}>
-        {children}
-      </Text>
+    <Pressable
+      accessibilityRole="button"
+      onPress={onPress}
+      onPressIn={() => setIsPressed(true)}
+      onPressOut={() => setIsPressed(false)}
+      accessibilityLabel={accessibilityLabel}
+      style={isPressed ? activeStyle : { padding: 12 }}
+    >
+      <Text style={[restyleStyle as any, style]}>{children}</Text>
     </Pressable>
   );
 };

@@ -1,31 +1,32 @@
 export const linkVariants = {
   defaults: {
     borderRadius: "none",
-    pb: "2px",
+    pb: 2,
+    textDecorationLine: "underline",
   },
   primary: {
-    color: "alias.pine",
+    color: "pine",
   },
   secondary: {
-    color: "alias.darkGrey",
+    color: "darkGrey",
   },
   tertiary: {
-    color: "alias.white",
+    color: "white",
   },
 };
 
 export const linkVariantsActive = {
   primary: {
-    backgroundColor: "alias.mint",
-    color: "alias.pine",
+    backgroundColor: "mint",
+    color: "pine",
   },
   secondary: {
-    color: "alias.darkTeal",
-    backgroundColor: "alias.mint",
+    color: "darkTeal",
+    backgroundColor: "mint",
   },
   tertiary: {
-    color: "alias.white",
-    backgroundColor: "palette.whiteAlpha.400",
+    color: "white",
+    backgroundColor: "whiteAlpha.400",
   },
 };
 
