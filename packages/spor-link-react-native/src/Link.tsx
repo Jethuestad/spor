@@ -1,11 +1,3 @@
-/* import React from 'react';
-import { Text } from 'react-native';
-
-type LinkProps = {};
-export const Link = (props: LinkProps) => {
-  return <Text>Hi there</Text>;
-}; */
-
 import React, { useState } from "react";
 import { Text } from "@vygruppen/spor-typography-react-native";
 import { Theme } from "@vygruppen/spor-theme-react-native";
@@ -41,7 +33,6 @@ type LinkProps = Exclude<RestyleProps, "variant"> & {
   variant: LinkVariant;
   children: string;
   onPress: () => void;
-  accessibilityLabel?: string;
   defaultLinked?: boolean;
   style?: StyleProp<ViewStyle>;
 };
@@ -50,7 +41,6 @@ export const Link = ({
   variant,
   children,
   onPress,
-  accessibilityLabel,
   defaultLinked = false,
   style,
   ...props
@@ -67,7 +57,6 @@ export const Link = ({
       onPress={onPress}
       onPressIn={() => setIsPressed(true)}
       onPressOut={() => setIsPressed(false)}
-      accessibilityLabel={accessibilityLabel}
       style={isPressed ? activeStyle : { padding: 12 }}
     >
       <Text style={[restyleStyle as any, style]}>{children}</Text>
