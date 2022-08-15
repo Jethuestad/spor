@@ -71,12 +71,12 @@ export const CodeBlockContainer = ({
       backgroundColor="alias.darkGrey"
       fontFamily="monospace"
       fontSize={["mobile.sm", "desktop.sm"]}
-      p={2}
+      p={12}
       position="relative"
       onKeyUp={handleKeyUp}
       {...props}
     >
-      <Box position="absolute" top={2} right={2}>
+      <Box position="absolute" top={12} right={12}>
         <CopyCodeButton ref={copyButtonRef} code={code} />
       </Box>
       <Box>{children}</Box>

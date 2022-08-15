@@ -81,10 +81,10 @@ export default function PlaygroundPage() {
   };
   return (
     <LiveProvider code={playgroundData}>
-      <Stack spacing={2}>
+      <Stack spacing={12}>
         <LiveEditor
           borderRadius="none"
-          minHeight="200px"
+          minHeight="12.5rem"
           onChange={handleChange}
         />
         <LiveError />

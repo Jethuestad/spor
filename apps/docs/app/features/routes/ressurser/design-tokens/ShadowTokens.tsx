@@ -12,8 +12,8 @@ import {
   Thead,
   Tr,
 } from "@vygruppen/spor-react";
-import { SharedTokenLayout } from "./SharedTokenLayout";
 import { useTokenFormatter } from "~/features/tokens/useTokenFormatter";
+import { SharedTokenLayout } from "./SharedTokenLayout";
 
 export function ShadowTokens(props: BoxProps) {
   return (
@@ -57,8 +57,8 @@ const ShadowTokensTable = (props: ShadowTokenTableProps) => {
             <Tr key={key}>
               <Td>
                 <Box
-                  width={8}
-                  height={8}
+                  width={54}
+                  height={54}
                   boxShadow={token.value}
                   borderRadius="xs"
                 />
@@ -67,7 +67,7 @@ const ShadowTokensTable = (props: ShadowTokenTableProps) => {
                 {key} / {token.value}
               </Td>
               <Td>
-                <Stack spacing={1}>
+                <Stack spacing={6}>
                   <Box>
                     <Code>{tokenFormatter(`depth.shadow.${key}`)}</Code>
                   </Box>

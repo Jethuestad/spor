@@ -39,9 +39,9 @@ function TableOfContent(props: TableOfContentProps) {
       transitionDuration="fast"
       transitionProperty="common"
       position="sticky"
-      py={10}
-      pr={4}
-      pl={1}
+      py={90}
+      pr={24}
+      pl={6}
       top="6rem"
       right="0"
       fontSize="sm"
@@ -54,14 +54,14 @@ function TableOfContent(props: TableOfContentProps) {
       <Heading as="h2" id="toc-title" textStyle="sm" fontWeight="bold">
         På denne siden
       </Heading>
-      <OrderedList spacing={1} ml="0" mt="4" styleType="none">
+      <OrderedList spacing={6} ml="0" mt={24} styleType="none">
         {headings.map(({ id, text, level }) => (
           <ListItem
             key={id}
             title={text}
             ml={
               Number(level.substring(1)) > 2
-                ? Number(level.substring(1))
+                ? Number(level.substring(1)) * 6
                 : undefined
             }
           >

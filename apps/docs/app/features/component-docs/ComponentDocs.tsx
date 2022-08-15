@@ -11,14 +11,14 @@ export const ComponentDocs = ({
   children,
 }: ComponentDocsProps) => {
   return (
-    <Stack spacing={4}>
-      <Stack spacing={2}>
+    <Stack spacing={24}>
+      <Stack spacing={12}>
         <Heading as="h1" textStyle="xl-display">
           {title}
         </Heading>
         <Text textStyle="sm">{description}</Text>
       </Stack>
-      <Stack spacing={8}>{children}</Stack>
+      <Stack spacing={54}>{children}</Stack>
     </Stack>
   );
 };

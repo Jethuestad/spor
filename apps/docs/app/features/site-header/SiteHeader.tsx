@@ -1,4 +1,5 @@
 import { Center, Stack, useDisclosure } from "@chakra-ui/react";
+import { Link, useLocation } from "@remix-run/react";
 import {
   Box,
   Divider,
@@ -12,8 +13,6 @@ import {
   VyLogo,
 } from "@vygruppen/spor-react";
 import { useEffect } from "react";
-import { Link, useLocation } from "@remix-run/react";
-import { MenuItem } from "~/utils/initialSanityData.server";
 import { useMenu } from "~/utils/useMenu";
 import { SearchableContentMenu } from "../content-menu/SearchableContentMenu";
 import { NavigationLink, SiteNavigation } from "./SiteNavigation";
@@ -26,14 +25,14 @@ export const SiteHeader = () => {
       color="alias.white"
       justifyContent="space-between"
       alignItems="center"
-      px={[3, 4, 7]}
-      py={[3, 4, 5, 7]}
+      px={[18, 24, 42]}
+      py={[18, 24, 30, 42]}
       backgroundColor="alias.darkTeal"
     >
-      <Box as={Link} mr={[0, 0, 11]} to="/">
+      <Box as={Link} mr={[0, 0, 120]} to="/">
         <VyLogo
           colorScheme="dark"
-          height={[5, 6, 8]}
+          height={[30, 36, 54]}
           width={["auto", "100%"]}
           aria-label="Vy"
         />
@@ -44,12 +43,6 @@ export const SiteHeader = () => {
   );
 };
 
-type MatchesData = {
-  menus: {
-    slug: string;
-    menuItems: MenuItem[];
-  }[];
-};
 const DesktopNavigation = () => {
   const menu = useMenu("top-menu");
   return (
@@ -93,9 +86,9 @@ const MobileNavigation = () => {
       />
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
-        <ModalContent mx={[2, "auto"]}>
-          <ModalBody py={2} px={[1, 2, 3]}>
-            <Stack spacing={2}>
+        <ModalContent mx={[12, "auto"]}>
+          <ModalBody py={12} px={[6, 12, 18]}>
+            <Stack spacing={12}>
               <SearchableContentMenu />
               <Divider />
               <Center>

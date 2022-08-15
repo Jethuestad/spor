@@ -1,13 +1,13 @@
 import { Center, Flex } from "@chakra-ui/react";
-import { useMatch } from "react-router-dom";
 import { Link, useResolvedPath } from "@remix-run/react";
+import { useMatch } from "react-router-dom";
 
 type SiteNavigationProps = {
   children: React.ReactNode;
 };
 export const SiteNavigation = ({ children }: SiteNavigationProps) => {
   return (
-    <Flex gap={3} as="nav" aria-label="Main" display={["none", "flex"]}>
+    <Flex gap={18} as="nav" aria-label="Main" display={["none", "flex"]}>
       {children}
     </Flex>
   );
@@ -27,8 +27,8 @@ export const NavigationLink = ({ children, href }: NavigationItemProps) => {
   return (
     <Center
       {...linkProps}
-      height="42px"
-      px={3}
+      height={7}
+      px={18}
       borderRadius="sm"
       border="solid transparent"
       borderWidth="strokes.md"

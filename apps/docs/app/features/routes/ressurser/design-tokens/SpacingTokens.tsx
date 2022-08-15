@@ -32,7 +32,7 @@ export function SpacingTokens(props: BoxProps) {
         </Text>
       }
     >
-      <Stack spacing={9}>
+      <Stack spacing={72}>
         <SpacingTokensTable />
       </Stack>
     </SharedTokenLayout>
@@ -65,19 +65,12 @@ const SpacingTokensTable = (props: SpacingTokenTableProps) => {
                   />
                 </Td>
                 <Td>
-                  {key} / {token.value}
+                  {key}
                 </Td>
                 <Td>
-                  <Stack spacing={1}>
+                  <Stack spacing={6}>
                     <Box>
-                      <Code>{tokenFormatter(`size.spacing.["${key}"]`)}</Code>
-                    </Box>
-                    <Box>
-                      <Code>
-                        {tokenFormatter(
-                          `size.spacing.px.[${token.value.replace("px", "")}]`
-                        )}
-                      </Code>
+                      <Code>{tokenFormatter(`size.spacing[${key}]`)}</Code>
                     </Box>
                   </Stack>
                 </Td>

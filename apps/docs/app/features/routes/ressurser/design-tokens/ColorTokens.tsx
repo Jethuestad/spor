@@ -51,11 +51,11 @@ export function ColorTokens(props: BoxProps) {
         </Text>
       }
     >
-      <Stack spacing={7}>
+      <Stack spacing={42}>
         {colorCategories.map((category) => (
           <ColorCategorySection key={category.title} {...category} />
         ))}
-        <Stack spacing={3}>
+        <Stack spacing={18}>
           <LinkableHeading as="h3" textStyle="md">
             Full fargepalett
           </LinkableHeading>
@@ -81,7 +81,7 @@ type ColorGridProps = BoxProps & {
 };
 const ColorGrid = ({ colors, ...rest }: ColorGridProps) => {
   return (
-    <SimpleGrid gap={3} columns={[2, 3, 4]} {...rest}>
+    <SimpleGrid gap={18} columns={[12, 18, 24]} {...rest}>
       {Object.values(colors).map((token, i) => (
         <ColorToken key={i} token={token} />
       ))}
@@ -112,12 +112,12 @@ const ColorToken = ({ token, ...rest }: ColorTokenProps) => {
   return (
     <Card colorScheme="white" borderRadius="sm" overflow="hidden" {...rest}>
       <Box
-        height="60px"
+        height="3.75rem"
         backgroundColor={value}
         borderBottom="1px solid"
         borderColor={isWhite ? "alias.osloGrey" : value}
       />
-      <Box px={2}>
+      <Box px={12}>
         <Text textStyle="xs" fontWeight="bold" whiteSpace="nowrap">
           {aliasName}
         </Text>

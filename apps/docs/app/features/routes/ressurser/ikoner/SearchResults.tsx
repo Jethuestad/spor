@@ -88,7 +88,7 @@ const NoHits = () => {
         as="h2"
         textStyle="sm"
         fontWeight="bold"
-        mt={7}
+        mt={42}
         textAlign="center"
       >
         Ingen matchende ikoner funnet
@@ -136,11 +136,11 @@ function Category({ title, icons }: CategoryProps) {
   }
 
   return (
-    <Stack spacing={2}>
+    <Stack spacing={12}>
       <LinkableHeading as="h2" textStyle="sm">
         {title}
       </LinkableHeading>
-      <SimpleGrid columns={[2, 3, 5, 6]} spacing={3}>
+      <SimpleGrid columns={[2, 3, 5, 6]} spacing={18}>
         {icons.map((icon) => (
           <MemoedIconBox key={icon.importName} icon={icon} />
         ))}
@@ -163,14 +163,14 @@ function IconBox({ icon }: IconBoxProps) {
       flexDirection="column"
       alignItems="center"
       justifyContent="space-between"
-      pt={1}
-      px={1}
-      pb={1}
+      pt={6}
+      px={6}
+      pb={6}
     >
       <Text textStyle="xs" textAlign="center">
         {toTitleCase(icon.name)}
       </Text>
-      <IconComponent mt={1} />
+      <IconComponent mt={6} />
       <Flex justifyContent="flex-end" width="100%">
         <IconButton
           as="a"

@@ -42,7 +42,7 @@ const ZIndexTokensTable = (props: ZIndexTokenTableProps) => {
               <Td>{key}</Td>
               <Td>{token.value}</Td>
               <Td>
-                <Stack spacing={1}>
+                <Stack spacing={6}>
                   <Box>
                     <Code>{tokenFormatter(`depth.z-index.${key}`)}</Code>
                   </Box>

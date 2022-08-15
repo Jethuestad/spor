@@ -18,7 +18,7 @@ export function SearchBar() {
           value={searchFilter.searchString}
         />
       </FormControl>
-      <FormControl flex="1 1 170px">
+      <FormControl flex="1 1 10.625rem">
         <Select
           label="Størrelse"
           value={searchFilter.size}
@@ -29,7 +29,7 @@ export function SearchBar() {
           <option value="30">30 x 30px</option>
         </Select>
       </FormControl>
-      <FormControl flex="1 1 150px">
+      <FormControl flex="1 1 9.375rem">
         <Select
           label="Variant"
           value={searchFilter.variant}

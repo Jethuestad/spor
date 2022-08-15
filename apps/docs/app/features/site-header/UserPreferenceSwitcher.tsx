@@ -25,7 +25,7 @@ export const UserPreferenceSwitcher = () => {
   const { userPreferences } = useUserPreferences();
   return (
     <>
-      <Flex as="button" onClick={onOpen} gap={2}>
+      <Flex as="button" onClick={onOpen} gap={12}>
         <Box whiteSpace="nowrap">
           Vis som{" "}
           <strong>
@@ -53,8 +53,8 @@ const UserPreferencesModal = ({
         <ModalHeader size="sm">Visningsvalg</ModalHeader>
         <ModalBody>
           <Text
-            mb={6}
-            pb={3}
+            mb={36}
+            pb={18}
             borderBottom="1px solid"
             borderColor="palette.blackAlpha.200"
           >

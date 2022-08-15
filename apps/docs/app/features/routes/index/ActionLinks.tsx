@@ -78,15 +78,15 @@ export function ActionLinks() {
     <Container maxWidth="container.lg">
       <SimpleGrid
         position="relative"
-        top={["-62px", -8]}
+        top={["-3.875rem", -54]}
         columns={[1, 2, 3]}
-        spacing={[3, 4]}
+        spacing={[18, 24]}
       >
         {links.map((link) => (
           <ActionLinkCard key={link.to} to={link.to}>
             <IconCircle backgroundColor={link.iconColor} icon={link.icon} />
             <Box>
-              <Heading as="h2" textStyle="md" mb={1.5} fontWeight="bold">
+              <Heading as="h2" textStyle="md" mb={9} fontWeight="bold">
                 {link.title}
               </Heading>
               <Text textStyle="sm">{link.description}</Text>
@@ -110,7 +110,7 @@ function ActionLinkCard({ to, children }: ActionLinkCardProps) {
     <Card
       {...linkProps}
       colorScheme="white"
-      p={4}
+      p={24}
       display="flex"
       flexDirection={["row", "column"]}
       gap={[3, 4]}
@@ -127,15 +127,15 @@ type IconCircleProps = {
 function IconCircle({ backgroundColor, icon: Icon }: IconCircleProps) {
   return (
     <Flex
-      width={["52px", "90px"]}
-      height={["52px", "90px"]}
-      flex={["0 0 52px", "0 0 90px"]}
+      width={["3.25rem", "5.625rem"]}
+      height={["3.25rem", "5.625rem"]}
+      flex={["0 0 3.25rem", "0 0 5.625rem"]}
       alignItems="center"
       justifyContent="center"
       borderRadius="round"
       backgroundColor={backgroundColor}
     >
-      <Icon width={["30px", "60px"]} height={["30px", "60px"]} />
+      <Icon width={["1.875rem", "3.75rem"]} height={["1.875rem", "3.75rem"]} />
     </Flex>
   );
 }

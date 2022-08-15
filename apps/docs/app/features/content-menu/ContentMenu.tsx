@@ -33,28 +33,28 @@ export const ContentMenu = forwardRef((_, ref) => {
       variant="list"
       size="sm"
       allowToggle
-      mt={6}
+      mt={36}
       defaultIndex={activeIndex}
     >
       {menu?.menuItems.map((item, index) => {
         if (item._type === "divider") {
-          return <Divider key={index} my={2} height="1px" />;
+          return <Divider key={index} my={12} height="1px" />;
         }
         const subItems = item.subItems?.filter((subItem) => subItem.url);
         const hasSubItems = Boolean(subItems?.length);
         return (
-          <AccordionItem key={item.title} my={0.5} >
+          <AccordionItem key={item.title} my={3} >
             <AccordionButton fontWeight="bold" ref={index === 0 ? ref : null}>
               {item.title}
               <AccordionIcon />
             </AccordionButton>
-            <AccordionPanel pt={1} pb={0}>
-              <Stack spacing={0.5}>
+            <AccordionPanel pt={6} pb={0}>
+              <Stack spacing={3}>
                 {subItems?.map((subItem) => (
                   <MenuItem
                     key={subItem.url}
                     url={subItem.url}
-                    height={5}
+                    height={30}
                     isActive={subItem.url === location.pathname}
                   >
                     {subItem.title}

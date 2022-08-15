@@ -12,7 +12,7 @@ export const ImageWithCaption = ({
   caption,
 }: ImageWithCaptionProps) => {
   return (
-    <Stack spacing={1.5}>
+    <Stack spacing={9}>
       <Image src={src} alt={alt} borderRadius="sm" boxShadow="sm" />
       <Text textStyle="xs">{caption}</Text>
     </Stack>

@@ -3,7 +3,7 @@ import { LiveError as ReactLiveError } from "react-live";
 
 export const LiveError = (props: BoxProps) => {
   return (
-    <Box textStyle="sm" p={2} {...props}>
+    <Box textStyle="sm" p={12} {...props}>
       <ReactLiveError />
     </Box>
   );

@@ -7,7 +7,7 @@ export const LivePreview = (props: BoxProps) => {
       borderRadius="sm"
       border="sm"
       borderColor="alias.osloGrey"
-      p={4}
+      p={24}
       {...props}
     >
       {/** @ts-ignore Bad typing in React Live */}

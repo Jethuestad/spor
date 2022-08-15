@@ -69,11 +69,11 @@ export default function ComponentsPage() {
   const { components, article } = useLoaderData<LoaderData>();
   return (
     <Box>
-      <Heading as="h1" textStyle="xl-display" mb={2}>
+      <Heading as="h1" textStyle="xl-display" mb={12}>
         {article.title}
       </Heading>
       <PortableText value={article.content} />
-      <SimpleGrid columns={[1, 2, 3]} gap={3} mt={6}>
+      <SimpleGrid columns={[1, 2, 3]} gap={18} mt={36}>
         {components.map((component) => (
           <Card
             key={component._id}

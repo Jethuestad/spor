@@ -1,3 +1,4 @@
+import { Link } from "@remix-run/react";
 import {
   Button,
   ButtonGroup,
@@ -7,14 +8,13 @@ import {
   Stack,
   Text,
 } from "@vygruppen/spor-react";
-import { Link } from "@remix-run/react";
 import { SearchBar } from "~/features/routes/ressurser/ikoner/SearchBar";
 import { SearchFilterProvider } from "~/features/routes/ressurser/ikoner/SearchFilterContext";
 import { SearchResults } from "~/features/routes/ressurser/ikoner/SearchResults";
 
 export default function IconsPage() {
   return (
-    <Stack spacing={4}>
+    <Stack spacing={24}>
       <Heading as="h1" textStyle="xl-display">
         Ikonbibliotek
       </Heading>
@@ -28,7 +28,7 @@ export default function IconsPage() {
         <Button
           as={Link}
           to="alle-ikoner.zip"
-          download={true}
+          download
           reloadDocument
           variant="primary"
           leftIcon={<DownloadOutline24Icon />}

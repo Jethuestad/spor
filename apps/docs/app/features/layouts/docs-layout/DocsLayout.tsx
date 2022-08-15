@@ -13,10 +13,10 @@ export const DocsLayout = ({ children }: DocsLayoutProps) => {
       <Box
         as="main"
         flex="1"
-        mt={6}
-        mx={[3, 6, 10]}
-        mb={["60px", "120px", "180px"]}
-        maxWidth="924px"
+        mt={36}
+        mx={[18, 36, 90]}
+        mb={["3.75rem", "7.5rem", "11.25rem"]}
+        maxWidth="57.75rem"
         ref={contentRef}
       >
         {children}

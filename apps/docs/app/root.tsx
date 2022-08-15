@@ -105,8 +105,8 @@ export function CatchBoundary() {
     case 404:
       message = (
         <Box>
-          <NotFound mx="auto" mb={2} />
-          <Text textStyle="sm" mb={4}>
+          <NotFound mx="auto" mb={12} />
+          <Text textStyle="sm" mb={24}>
             Ups! Det ser ut som du prøvde å besøke en side som ikke finnes.
           </Text>
           <Button as="a" href="/" variant="primary">

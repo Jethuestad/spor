@@ -12,10 +12,10 @@ import { ZIndexTokens } from "~/features/routes/ressurser/design-tokens/ZIndexTo
 export default function DesignTokensPage() {
   return (
     <Box>
-      <Heading as="h1" textStyle="xl-display" mb={2}>
+      <Heading as="h1" textStyle="xl-display" mb={12}>
         Design tokens
       </Heading>
-      <Stack spacing={3} fontSize={["mobile.sm", "desktop.sm"]}>
+      <Stack spacing={18} fontSize={["mobile.sm", "desktop.sm"]}>
         <Text>
           Design tokens er alle verdiene man trenger for å konstruere og
           vedlikeholde et designsystem. Disse verdiene kan representere alt som
@@ -30,8 +30,8 @@ export default function DesignTokensPage() {
           og mer.
         </Text>
       </Stack>
-      <Divider my={8} />
-      <Stack spacing={9}>
+      <Divider my={54} />
+      <Stack spacing={72}>
         <ColorTokens />
         <TypographyTokens />
         <SpacingTokens />

@@ -10,21 +10,21 @@ import {
 
 export function Footer() {
   return (
-    <Container as="footer" maxWidth="1480px" height={["auto", "124px"]}>
+    <Container as="footer" maxWidth="92.5rem" height={["auto", "7.75rem"]}>
       <Flex
         justifyContent="space-between"
         borderTop="1px solid"
         borderColor="alias.steel"
-        py={4}
+        py={24}
       >
         <Box as="a" href="https://vy.no" title="Gå til Vy.no">
-          <VyLogo colorScheme="light" width="80px" />
+          <VyLogo colorScheme="light" width="5rem" />
         </Box>
         <Flex as="nav" aria-label="Footer" flexDirection={["column", "row"]}>
           <FooterLink
             href="https://www.vy.no/vygruppen/om-oss"
             icon={InformationOutline24Icon}
-            mr={8}
+            mr={54}
           >
             Om Vy
           </FooterLink>
@@ -54,7 +54,7 @@ function FooterLink({ href, icon: Icon, children, ...props }: FooterLinkProps) {
       _hover={{ textDecoration: "underline" }}
       {...props}
     >
-      <Icon mr={3} />
+      <Icon mr={18} />
       {children}
     </Flex>
   );

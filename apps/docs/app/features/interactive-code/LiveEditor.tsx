@@ -18,7 +18,7 @@ export const LiveEditor = ({ onChange, ...props }: LiveEditorProps) => {
     <CodeBlockContainer code={liveContext.code} spellCheck={false} {...props}>
       <ReactLiveEditor
         theme={theme}
-        style={{ overflow: "scroll", height: "100%" }}
+        style={{ overflow: "auto", height: "100%" }}
         {...(onChange ? { onChange } : {})}
       />
     </CodeBlockContainer>

@@ -11,7 +11,7 @@ export type SearchResultsProps = {
 export const SearchResults = forwardRef<SearchResultsProps, "button">(
   ({ query, hits }, ref) => {
     return (
-      <Box mt={2}>
+      <Box mt={12}>
         {hits
           .filter((item) => item.url)
           .map((item, index) => (
@@ -19,7 +19,7 @@ export const SearchResults = forwardRef<SearchResultsProps, "button">(
               ref={index === 0 ? ref : undefined}
               key={item.url}
               url={item.url}
-              height={5}
+              height={30}
             >
               {item.title}
             </MenuItem>

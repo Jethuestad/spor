@@ -91,12 +91,12 @@ export default function ArticlePage() {
   const { data: article, isPreview } = usePreviewableData<Data>();
   return (
     <>
-      <HStack mb={1} justifyContent="space-between">
+      <HStack mb={6} justifyContent="space-between">
         {article.category?.title && (
           <Badge colorScheme="green">{article.category?.title}</Badge>
         )}
         {isPreview && <Badge colorScheme="red">Preview</Badge>}
-        <Flex flexWrap="wrap" gap={2}>
+        <Flex flexWrap="wrap" gap={12}>
           {article.resourceLinks?.map((link) => (
             <Button
               key={link.url}
@@ -112,7 +112,7 @@ export default function ArticlePage() {
         </Flex>
       </HStack>
       <Box>
-        <Heading as="h1" textStyle="xl-display" mb={2}>
+        <Heading as="h1" textStyle="xl-display" mb={12}>
           {article.title}
         </Heading>
         <Box>

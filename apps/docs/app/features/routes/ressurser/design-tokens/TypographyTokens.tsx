@@ -91,7 +91,7 @@ export function TypographyTokens(props: BoxProps) {
       {...props}
       title="Typografi"
       description={
-        <Stack spacing={6}>
+        <Stack spacing={36}>
           <Text>
             Vi har to “sett” med tekststiler; ett for mobil og ett for desktop.
             Tekststilene for Mobil skal brukes i Vy-appen, og web på mobil, mens
@@ -108,7 +108,7 @@ export function TypographyTokens(props: BoxProps) {
         </Stack>
       }
     >
-      <Stack spacing={9}>
+      <Stack spacing={72}>
         <TypographyTokenTable viewportSize="mobile" title="Mobil" />
         <TypographyTokenTable viewportSize="desktop" title="Desktop" />
       </Stack>
@@ -128,7 +128,7 @@ const TypographyTokenTable = ({
   const tokenFormatter = useTokenFormatter();
   return (
     <Box {...props}>
-      <LinkableHeading as="h2" textStyle="sm" fontWeight="bold" mb={2}>
+      <LinkableHeading as="h2" textStyle="sm" fontWeight="bold" mb={12}>
         {title}
       </LinkableHeading>
       <Table variant="simple" colorScheme="grey">
@@ -168,7 +168,7 @@ const TypographyTokenTable = ({
                   / {tokens.font.style[token.key]["line-height"].value}
                 </Td>
                 <Td>
-                  <Stack spacing={1}>
+                  <Stack spacing={6}>
                     <Box>
                       <Code>
                         {tokenFormatter(

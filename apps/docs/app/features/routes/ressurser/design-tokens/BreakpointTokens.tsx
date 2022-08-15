@@ -48,7 +48,7 @@ const BreakpointTokensTable = (props: BreakpointTokenTableProps) => {
               <Td>{breakpointDisplayNames[key as Breakpoint] || key}</Td>
               <Td>{token.value}</Td>
               <Td>
-                <Stack spacing={1}>
+                <Stack spacing={6}>
                   <Box>
                     <Code>{tokenFormatter(`size.breakpoint.${key}`)}</Code>
                   </Box>

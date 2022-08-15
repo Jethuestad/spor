@@ -20,7 +20,7 @@ const App = () => {
           <Stack
             backgroundColor="white"
             height="100%"
-            p={2}
+            p={12}
             justifyContent="center"
           >
             <Heading color="darkGrey" variant="2xl" textAlign="center">
