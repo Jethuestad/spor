@@ -11,7 +11,7 @@ import {
   useTheme,
 } from "@shopify/restyle";
 import { Pressable, StyleProp, ViewStyle } from "react-native";
-import { Box } from "@vygruppen/spor-layout-react-native";
+
 
 const variant = createVariant({
   themeKey: "linkVariants",
