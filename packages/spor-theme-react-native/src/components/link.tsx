@@ -1,3 +1,6 @@
+import { borderRadii } from "@vygruppen/spor-theme-react-native/src/foundations/borderRadii";
+import { spacing } from "@vygruppen/spor-theme-react-native/src/foundations/spacing";
+
 export const linkVariants = {
   defaults: {
     borderRadius: "none",
@@ -15,18 +18,43 @@ export const linkVariants = {
   },
 };
 
+export function getLinkVariantActivedState(
+  variant: "primary" | "secondary" | "tertiary"
+) {
+  return {
+    ...linkVariantsActive.default,
+    ...linkVariantsActive[variant],
+  };
+}
+
 export const linkVariantsActive = {
+  default: {
+    padding: spacing.sm,
+    borderRadius: borderRadii.sm,
+  },
   primary: {
     backgroundColor: "mint",
     color: "pine",
   },
   secondary: {
     color: "darkTeal",
-    backgroundColor: "mint",
+    backgroundColor: "green.100",
   },
   tertiary: {
     color: "white",
     backgroundColor: "whiteAlpha.400",
+  },
+};
+
+export const linkSizes = {
+  sm: {
+    fontSize: 16,
+  },
+  md: {
+    fontSize: 18,
+  },
+  lg: {
+    fontSize: 24,
   },
 };
 
