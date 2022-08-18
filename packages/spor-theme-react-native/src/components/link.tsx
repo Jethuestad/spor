@@ -1,5 +1,4 @@
-import { borderRadii } from "@vygruppen/spor-theme-react-native/src/foundations/borderRadii";
-import { spacing } from "@vygruppen/spor-theme-react-native/src/foundations/spacing";
+import { theme } from "@vygruppen/spor-theme-react-native";
 
 export const linkVariants = {
   defaults: {
@@ -8,7 +7,7 @@ export const linkVariants = {
     textDecorationLine: "underline",
   },
   primary: {
-    color: "pine",
+    color: theme.colors.pine,
   },
   secondary: {
     color: "darkGrey",
@@ -29,16 +28,16 @@ export function getLinkVariantActivedState(
 
 export const linkVariantsActive = {
   default: {
-    padding: spacing.sm,
-    borderRadius: borderRadii.sm,
+    padding: theme.spacing.sm,
+    borderRadius: theme.borderRadii.xs,
   },
   primary: {
     backgroundColor: "mint",
-    color: "pine",
+    color: theme.colors.pine,
   },
   secondary: {
     color: "darkTeal",
-    backgroundColor: "green.100",
+    backgroundColor: "mint",
   },
   tertiary: {
     color: "white",
@@ -57,5 +56,3 @@ export const linkSizes = {
     fontSize: 24,
   },
 };
-
-export const linkVariantsfocus = {};
