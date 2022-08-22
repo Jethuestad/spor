@@ -24,6 +24,7 @@ export function SearchBar() {
           value={searchFilter.size}
           onChange={(e) => setSize(e.target.value)}
         >
+          <option value="12">12 x 12px</option>
           <option value="18">18 x 18px</option>
           <option value="24">24 x 24px</option>
           <option value="30">30 x 30px</option>
