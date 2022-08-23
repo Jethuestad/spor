@@ -17,6 +17,9 @@
     "directory": "packages/spor-react"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.2.8",
+    "@emotion/react": "^11.10.0",
+    "@emotion/styled": "^11.10.0",
     "@leile/lobo-t": "^1.0.5",
     "@vygruppen/spor-accordion-react": "*",
     "@vygruppen/spor-button-react": "*",
@@ -38,23 +41,16 @@
     "@vygruppen/spor-provider-react": "*",
     "@vygruppen/spor-tab-react": "*",
     "@vygruppen/spor-typography-react": "*",
-    "@vygruppen/spor-stepper-react": "*"
+    "@vygruppen/spor-stepper-react": "*",
+    "framer-motion": "^7.2.0"
   },
   "devDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "@chakra-ui/react": "^2.2.8",
-    "@emotion/react": "^11.10.0",
-    "@emotion/styled": "^11.10.0",
-    "framer-motion": "^7.2.0",
     "tsup": "^6.2.2"
   },
   "peerDependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "@chakra-ui/react": "^2.2.8",
-    "@emotion/react": "^11.10.0",
-    "@emotion/styled": "^11.10.0",
-    "framer-motion": "3.x || 4.x || 5.x || 6.x || 7.x"
+    "react-dom": "^18.2.0"
   }
 }
