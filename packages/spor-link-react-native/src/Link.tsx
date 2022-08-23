@@ -1,74 +1,38 @@
 import React, { useState } from "react";
-import { Text } from "@vygruppen/spor-typography-react-native";
-import { Theme } from "@vygruppen/spor-theme-react-native";
+import { variantStyling } from "./stylingLink";
+import { LinkProps } from "./types";
 import { Box } from "@vygruppen/spor-layout-react-native";
-import {
-  SpacingProps,
-  VariantProps,
-  createVariant,
-  useRestyle,
-  composeRestyleFunctions,
-  spacing,
-  useTheme,
-} from "@shopify/restyle";
-import { Linking, Pressable, StyleProp, ViewStyle } from "react-native";
-
-const variant = createVariant({
-  themeKey: "linkVariants",
-  property: "variant",
-});
-
-type Variant = VariantProps<Theme, "linkVariants", "variant"> &
-  VariantProps<Theme, "linkSizes", "size">;
-
-const sizes = createVariant({ themeKey: "linkSizes", property: "size" });
-
-type RestyleProps = SpacingProps<Theme> & Variant;
-
-const restyleFunctions = composeRestyleFunctions<Theme, RestyleProps>([
-  spacing,
-  variant,
-  sizes,
-]);
-
-type LinkVariant = "primary" | "secondary" | "tertiary";
-
-type LinkProps = Exclude<RestyleProps, "variant"> & {
-  variant: LinkVariant;
-  children: string;
-  accessibilityLabel?: string;
-  url: string;
-  style?: StyleProp<ViewStyle>;
-};
-
-function openLink(url: string) {
-  Linking.openURL(url);
-}
+import { Linking, Pressable } from "react-native";
+import { Text } from "@vygruppen/spor-typography-react-native";
 
 export const Link = ({
   variant,
+  size,
   children,
   accessibilityLabel,
-  style,
   url,
-  ...props
 }: LinkProps) => {
-  const theme = useTheme<Theme>();
-  const restyleProps: Record<string, any> = { ...props, variant };
-  const { style: restyleStyle } = useRestyle(restyleFunctions, restyleProps);
-  const [isPressed, setIsPressed] = useState(false);
-  const activeStyle = theme.getLinkVariantActivedState(variant);
-
+  const styles = variantStyling[variant];
   return (
-    <Pressable
-      accessibilityRole="link"
-      accessibilityLabel={accessibilityLabel}
-      onPress={() => openLink(url)}
-      onPressIn={() => setIsPressed(true)}
-      onPressOut={() => setIsPressed(false)}
-      style={isPressed ? activeStyle : activeStyle}
+    <Box
+      backgroundColor={styles.backgroundColor}
+      flexDirection="row"
+      justifyContent="center"
+      style={{ borderRadius: containerRadii[size] }}
+      padding={2}
     >
-      <Text style={[restyleStyle as any, style]}>{children}</Text>
-    </Pressable>
+      <Pressable
+        accessibilityRole="link"
+        accessibilityLabel={accessibilityLabel}
+        style={{ borderRadius: containerRadii[size] }}
+        onPressIn={() => setIsPressed(true)}
+        onPressOut={() => setIsPressed(false)}
+      >
+        {children && <Text color="darkGrey">{children}</Text>}
+      </Pressable>
+    </Box>
   );
 };
+
+const containerRadii = { sm: 0.5, md: 1, lg: 1 } as const;
+const [isPressed, setIsPressed] = useState(false);
