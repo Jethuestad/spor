@@ -9,37 +9,43 @@
     "start": "remix-serve build"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.2.8",
     "@emotion/cache": "^11.7.1",
+    "@emotion/react": "^11.10.0",
     "@emotion/server": "^11.4.0",
-    "@portabletext/react": "^1.0.3",
-    "@remix-run/node": "1.4.1",
-    "@remix-run/react": "1.4.1",
-    "@remix-run/serve": "1.4.1",
-    "@sanity/groq-store": "^0.3.1",
+    "@portabletext/react": "^1.0.6",
+    "@remix-run/node": "1.6.8",
+    "@remix-run/react": "1.6.8",
+    "@remix-run/serve": "1.6.8",
+    "@sanity/groq-store": "^0.4.1",
     "@sanity/image-url": "^1.0.1",
     "@vygruppen/spor-design-tokens": "*",
     "@vygruppen/spor-icon": "*",
     "@vygruppen/spor-icon-react": "*",
-    "@vygruppen/spor-react": "^0.13.22",
+    "@vygruppen/spor-react": "*",
     "match-sorter": "^6.3.1",
     "picosanity": "^4.0.0",
-    "prism-react-renderer": "^1.3.1",
+    "prism-react-renderer": "^1.3.5",
     "prismjs": "^1.28.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-live": "^3.1.0",
-    "react-router-dom": "^6.2.1",
-    "remix-utils": "^3.2.0",
+    "react-router-dom": "^6.3.0",
+    "remix-utils": "^3.3.0",
     "tiny-invariant": "^1.2.0"
   },
   "devDependencies": {
-    "@remix-run/dev": "1.4.1",
+    "@remix-run/dev": "1.6.8",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "config": "*",
     "eslint": "7.32.0",
     "tsconfig": "*",
     "typescript": "^4.1.2"
+  },
+  "overrides": {
+    "react": "$react",
+    "react-dom": "$react-dom"
   },
   "engines": {
     "node": ">=14"
