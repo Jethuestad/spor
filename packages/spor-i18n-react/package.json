@@ -28,6 +28,6 @@
     "tsup": "^6.2.2"
   },
   "peerDependencies": {
-    "react": ">17.0.0"
+    "react": "17.x || 18.x"
   }
 }
