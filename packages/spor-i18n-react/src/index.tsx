@@ -1,4 +1,5 @@
 import { initLobot } from "@leile/lobo-t";
+import React from "react";
 
 export enum Language {
   NorwegianBokmal = "nb",

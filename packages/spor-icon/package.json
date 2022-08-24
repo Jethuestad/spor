@@ -15,11 +15,10 @@
     "directory": "packages/spor-icon"
   },
   "scripts": {
-    "clean": "rimraf dist",
-    "prebuild": "npm run clean",
-    "build": "mkdir dist && bestzip dist/spor-icons.zip svg/*"
+    "build": "rimraf dist && mkdir dist && bestzip dist/spor-icons.zip svg/*"
   },
   "devDependencies": {
-    "bestzip": "^2.2.0"
+    "bestzip": "^2.2.0",
+    "@types/node": "^16"
   }
 }

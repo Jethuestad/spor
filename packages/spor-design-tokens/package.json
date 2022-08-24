@@ -20,6 +20,7 @@
   "sideEffects": false,
   "license": "MIT",
   "devDependencies": {
+    "@types/node": "^16.0.0",
     "@vygruppen/tsconfig": "workspace:*",
     "json-to-ts": "^1.7.0",
     "prettier": "^2.4.1",

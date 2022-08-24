@@ -4,5 +4,7 @@
   "exclude": ["dist", "elm", "node_modules"],
   "compilerOptions": {
     "rootDir": ".",
+    "lib": ["ES2019"],
+    "types": ["node"]
   }
 }
