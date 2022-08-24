@@ -17,13 +17,11 @@
     "dev": "npm run dev:web",
     "dev:web": "turbo run dev --no-cache --parallel --filter=@vygruppen/spor*-react --filter=@vygruppen/docs --filter=@vygruppen/studio",
     "dev:rn": "turbo run dev --no-cache --parallel --filter=@vygruppen/spor*-react-native --filter=@vygruppen/rn-demo",
-    "postinstall": "patch-package",
     "prerelease": "npm run build",
     "release": "changeset publish"
   },
   "dependencies": {
     "@changesets/cli": "^2.19.0",
-    "patch-package": "^6.4.7",
     "plop": "^3.0.4",
     "prettier": "^2.5.1",
     "rimraf": "^3.0.2",
