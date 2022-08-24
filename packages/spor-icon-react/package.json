@@ -25,14 +25,14 @@
     "build:step-3": "rimraf tmp"
   },
   "dependencies": {
-    "@vygruppen/spor-layout-react": "*"
+    "@vygruppen/spor-layout-react": "workspace:*"
   },
   "peerDependencies": {
     "react": "^17.0.0 || ^18.0.0",
     "react-dom": "^17.0.0 || ^18.0.0"
   },
   "devDependencies": {
-    "@vygruppen/spor-icon": "*",
+    "@vygruppen/spor-icon": "workspace:*",
     "@svgr/core": "^6.2.0",
     "@svgr/plugin-jsx": "^6.2.0",
     "@svgr/plugin-svgo": "^6.2.0",

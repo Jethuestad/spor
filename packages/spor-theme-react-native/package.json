@@ -19,7 +19,7 @@
     "dev": "tsup src/index.tsx --watch --format esm"
   },
   "dependencies": {
-    "@vygruppen/spor-design-tokens": "*"
+    "@vygruppen/spor-design-tokens": "workspace:*"
   },
   "devDependencies": {
     "@shopify/restyle": "^2.1.0",

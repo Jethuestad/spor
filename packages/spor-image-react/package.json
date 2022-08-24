@@ -20,20 +20,11 @@
     "dev": "tsup src/index.tsx --watch --format esm"
   },
   "devDependencies": {
-    "react": ">17.0.0",
-    "react-dom": ">17.0.0",
-    "@chakra-ui/react": "^1.7.3",
-    "@emotion/react": "^11.7.1",
-    "@emotion/styled": "^11.6.0",
-    "framer-motion": "^6.0.0",
     "tsup": "^6.2.2"
   },
   "peerDependencies": {
     "react": ">17.0.0",
     "react-dom": ">17.0.0",
-    "@chakra-ui/react": "^1.7.3",
-    "@emotion/react": "^11.7.1",
-    "@emotion/styled": "^11.6.0",
-    "framer-motion": "3.x || 4.x || 5.x || 6.x"
+    "@chakra-ui/react": "^1.7.3 || ^2.2.3"
   }
 }

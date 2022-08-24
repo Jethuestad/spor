@@ -20,8 +20,8 @@
     "dev": "tsup src/index.tsx --watch --format esm"
   },
   "dependencies": {
-    "@vygruppen/spor-i18n-react": "*",
-    "@vygruppen/spor-theme-react-native": "*"
+    "@vygruppen/spor-i18n-react": "workspace:*",
+    "@vygruppen/spor-theme-react-native": "workspace:*"
   },
   "devDependencies": {
     "@shopify/restyle": "^2.1.0",

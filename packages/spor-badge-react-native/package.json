@@ -20,10 +20,10 @@
     "dev": "tsup src/index.tsx --watch --format esm"
   },
   "dependencies": {
-    "@vygruppen/spor-layout-react-native": "*",
-    "@vygruppen/spor-typography-react-native": "*",
-    "@vygruppen/spor-theme-react-native": "*",
-    "@vygruppen/spor-icon-react-native": "*"
+    "@vygruppen/spor-layout-react-native": "workspace:*",
+    "@vygruppen/spor-typography-react-native": "workspace:*",
+    "@vygruppen/spor-theme-react-native": "workspace:*",
+    "@vygruppen/spor-icon-react-native": "workspace:*"
   },
   "devDependencies": {
     "@shopify/restyle": "^2.1.0",
