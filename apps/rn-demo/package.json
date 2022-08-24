@@ -10,8 +10,8 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
-    "@vygruppen/spor-design-tokens": "*",
-    "@vygruppen/spor-react-native": "*",
+    "@vygruppen/spor-design-tokens": "workspace:*",
+    "@vygruppen/spor-react-native": "workspace:*",
     "lottie-ios": "^3.2.3",
     "lottie-react-native": "^5.1.3",
     "react": "17.0.2",
