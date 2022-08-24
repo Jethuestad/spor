@@ -23,6 +23,7 @@
     "@leile/lobo-t": "^1.0.5"
   },
   "devDependencies": {
+    "@vygruppen/tsconfig": "workspace:*",
     "tsup": "^6.2.2"
   },
   "peerDependencies": {

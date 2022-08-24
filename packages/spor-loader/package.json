@@ -20,6 +20,7 @@
     "dev": "tsup src/index.ts --watch"
   },
   "devDependencies": {
+    "@vygruppen/tsconfig": "workspace:*",
     "tsup": "^6.2.2"
   }
 }

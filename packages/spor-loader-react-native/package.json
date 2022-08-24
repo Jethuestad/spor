@@ -25,6 +25,7 @@
   "devDependencies": {
     "@vygruppen/spor-layout-react-native": "workspace:*",
     "@vygruppen/spor-typography-react-native": "workspace:*",
+    "@vygruppen/tsconfig": "workspace:*",
     "lottie-ios": "3.2.3",
     "lottie-react-native": "^5.1.3",
     "react": ">17.0.0",

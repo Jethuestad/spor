@@ -26,6 +26,7 @@
     "@vygruppen/spor-layout-react": "workspace:*"
   },
   "devDependencies": {
+    "@vygruppen/tsconfig": "workspace:*",
     "tsup": "^6.2.2"
   },
   "peerDependencies": {

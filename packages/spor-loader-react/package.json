@@ -23,6 +23,7 @@
     "@vygruppen/spor-loader": "workspace:*"
   },
   "devDependencies": {
+    "@vygruppen/tsconfig": "workspace:*",
     "tsup": "^6.2.2"
   },
   "peerDependencies": {

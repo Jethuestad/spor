@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "@vygruppen/spor-icon": "workspace:*",
+    "@vygruppen/tsconfig": "workspace:*",
     "react-native-svg": "^12.3.0",
     "@svgr/core": "^6.2.0",
     "@svgr/plugin-jsx": "^6.2.0",
