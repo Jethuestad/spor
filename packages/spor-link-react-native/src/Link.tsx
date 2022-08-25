@@ -10,7 +10,7 @@ export const Link = ({
   size,
   children,
   accessibilityLabel,
-  url,
+  onPress,
 }: LinkProps) => {
   const styles = variantStyling[variant];
   return (
@@ -27,6 +27,7 @@ export const Link = ({
         style={{ borderRadius: containerRadii[size] }}
         onPressIn={() => setIsPressed(true)}
         onPressOut={() => setIsPressed(false)}
+        onPress={onPress}
       >
         {children && <Text color="darkGrey">{children}</Text>}
       </Pressable>

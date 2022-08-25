@@ -12,6 +12,6 @@ export type LinkProps = {
   variant: Variant;
   size: Size;
   children?: string;
-  accessibilityLabel?: string;
-  url: string;
+  accessibilityLabel: string;
+  onPress: () => void
 };

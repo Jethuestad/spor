@@ -11,13 +11,13 @@ type VariantStyling = {
 export const variantStyling: Record<Variant, VariantStyling> = {
   primary: {
     fontSize: "sm",
-    backgroundColor: "mint",
+    backgroundColor: "primaryGreen",
     color: "pine",
   },
   secondary: {
-    fontSize: "md",
-    backgroundColor: "mint",
-    color: "darkGrey",
+    fontSize: "lg",
+    backgroundColor: "coralGreen",
+    color: "darkTeal",
   },
   tertiary: {
     fontSize: "lg",
