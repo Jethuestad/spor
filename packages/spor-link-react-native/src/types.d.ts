@@ -1,17 +1,13 @@
 
 
-export type Variant = "primary" | "secondary" | "tertiary";
-
-export type Size = "sm" | "md" | "lg";
-
-function openLink(url: string) {
+/* function openLink(url: string) {
   Linking.openURL(url);
-}
+} */
 
 export type LinkProps = {
-  variant: Variant;
-  size: Size;
+  variant: "primary" | "secondary" | "tertiary";
+  size: "sm" | "md" | "lg";
   children?: string;
   accessibilityLabel: string;
-  onPress: () => void
+  isPressed: () => void
 };

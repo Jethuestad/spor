@@ -1,39 +1,36 @@
 import React, { useState } from "react";
-import { variantStyling } from "./stylingLink";
 import { LinkProps } from "./types";
 import { Box } from "@vygruppen/spor-layout-react-native";
-import { Linking, Pressable } from "react-native";
+import { Pressable } from "react-native";
 import { Text } from "@vygruppen/spor-typography-react-native";
+import {getStyles} from "../src/stylingLink"
 
-export const Link = ({
-  variant,
-  size,
-  children,
+export const Link = ((props: LinkProps) => {
+const {
+  variant = "primary",
+  size = "md",
   accessibilityLabel,
-  onPress,
-}: LinkProps) => {
-  const styles = variantStyling[variant];
-  return (
-    <Box
-      backgroundColor={styles.backgroundColor}
-      flexDirection="row"
-      justifyContent="center"
-      style={{ borderRadius: containerRadii[size] }}
-      padding={2}
-    >
-      <Pressable
-        accessibilityRole="link"
-        accessibilityLabel={accessibilityLabel}
-        style={{ borderRadius: containerRadii[size] }}
-        onPressIn={() => setIsPressed(true)}
-        onPressOut={() => setIsPressed(false)}
-        onPress={onPress}
-      >
-        {children && <Text color="darkGrey">{children}</Text>}
-      </Pressable>
-    </Box>
-  );
-};
+  children,
+  isPressed
+} = props;
 
-const containerRadii = { sm: 0.5, md: 1, lg: 1 } as const;
-const [isPressed, setIsPressed] = useState(false);
+const styles = getStyles("Link", {
+  size,
+  variant, 
+  accessibilityLabel,
+  children,
+  isPressed,
+});
+
+return (
+  <Box style={styles.container}>
+    <Pressable>
+        <Text style={styles.text} accessibilityLabel={accessibilityLabel}>{children}</Text>
+      </Pressable>
+  </Box>
+)
+
+});
+
+
+
