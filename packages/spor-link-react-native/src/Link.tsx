@@ -1,11 +1,25 @@
 import React, { useState } from "react";
-import { LinkProps } from "./types";
 import { Box } from "@vygruppen/spor-layout-react-native";
 import { Pressable } from "react-native";
 import { Text } from "@vygruppen/spor-typography-react-native";
-import {getStyles} from "../src/stylingLink"
+import { getStyles } from "./stylingLink";
+import { Variant } from "framer-motion";
 
-export const Link = ((props: LinkProps) => {
+type LinkProps = {
+  variant: Variant;
+};
+
+export const Link = ({ variant, ...rest }: LinkProps) => {
+  const styles = getStyles[variant];
+  return (
+    <Box style={styles.container} {...rest}>
+      <Pressable>
+        <Text style={styles.text}></Text>
+      </Pressable>
+    </Box>
+  );
+};
+/* export const Link = ((props: LinkProps) => {
 const {
   variant = "primary",
   size = "md",
@@ -30,7 +44,4 @@ return (
   </Box>
 )
 
-});
-
-
-
+}); */

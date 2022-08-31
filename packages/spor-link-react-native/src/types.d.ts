@@ -9,5 +9,5 @@ export type LinkProps = {
   size: "sm" | "md" | "lg";
   children?: string;
   accessibilityLabel: string;
-  isPressed: () => void
+  isPressed: boolean
 };
