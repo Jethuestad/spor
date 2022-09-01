@@ -8,6 +8,6 @@ export type LinkProps = {
   variant: "primary" | "secondary" | "tertiary";
   size: "sm" | "md" | "lg";
   children?: string;
-  accessibilityLabel: string;
+  accessibilityLabel?: string;
   isPressed: boolean
 };

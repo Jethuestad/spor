@@ -1,11 +1,10 @@
-
- export type GetStylesArgs = {
+export type GetStylesArgs = {
   variant: "primary" | "secondary" | "tertiary";
   size: "sm" | "md" | "lg";
   isPressed: boolean;
 };
 
-function getStyles(args: GetStylesArgs) {
+export function getStyles(args: GetStylesArgs) {
   return deepMerge(baseStyle(args), variantStyles(args), sizeStyles(args));
 }
 
@@ -29,7 +28,6 @@ const baseStyle = ({ isPressed }: GetStylesArgs) => {
       spacing: "sm",
       backgroundColor: isPressed ? "alias.darkTeal" : "transparent",
     },
-
     text: {
       fontWeight: "normal",
     },

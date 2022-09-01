@@ -32,7 +32,6 @@ const App = () => {
               forskjellige komponenter i Spor sitt designsystem for React
               Native.
             </Text>
-            <Link variant="primary" url="https://spor.cloud.vy.no/ressurser/design-tokens">TEST</Link>
           </Stack>
         </SafeAreaView>
       </SafeAreaProvider>
