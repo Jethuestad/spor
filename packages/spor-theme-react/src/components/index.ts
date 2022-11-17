@@ -17,6 +17,7 @@ export { default as LineIcon } from "./line-icon";
 export { default as Link } from "./link";
 export { default as MediaControllerButton } from "./media-controller-button";
 export { default as Modal } from "./modal";
+export { default as MultiSelect } from "./multiselect";
 export { default as Popover } from "./popover";
 export { default as Radio } from "./radio";
 export { default as Select } from "./select";

@@ -8,6 +8,7 @@ export * from "./FormErrorMessage";
 export * from "./FormLabel";
 export * from "./Input";
 export * from "./InputElement";
+export * from "./MultiSelect";
 export * from "./PasswordInput";
 export * from "./Radio";
 export * from "./RadioGroup";
