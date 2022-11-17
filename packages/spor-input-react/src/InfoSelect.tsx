@@ -6,37 +6,32 @@ import {
   Button,
   Popover,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useRef } from "react";
 import { FormControl, FormLabel } from ".";
-import { HiddenSelect, useSelect } from "react-aria";
+import { Item, useSelectState, SelectState } from 'react-stately';
+import { AriaSelectOptions, HiddenSelect, useSelect } from "react-aria";
 import { useListBox, useOption } from "react-aria";
 
-export type InfoSelectProps = Exclude<
-  ChakraSelectProps,
-  "colorScheme" | "variant" | "size"
-> & { label?: string };
+export type InfoSelectProps = AriaSelectOptions<typeof Item> & { label?: string };
 /**
  * Selects let you choose between several options
  *
  * You should consider only using the Select component when you have more than  4 options. Otherwise, you should use the `<Radio>` component.
  *
  * ```tsx
- * <Select label="Select level of luxury">
- *  <option>No luxury</option>
- *  <option>Some luxury</option>
- *  <option>Lots of luxury</option>
- *  <option>I'm rich</option>
- * </Select>
+ * <InfoSelect label="Select level of luxury">
+ *  <Item>No luxury</Item>
+ *  <Item>Some luxury</Item>
+ *  <Item>Lots of luxury</Item>
+ *  <Item>I'm rich</Item>
+ * </InfoSelect>
  * ```
  */
 
 export const InfoSelect = (props: InfoSelectProps) => {
-  // Create state based on the incoming props
-  let state = useSelectState(props);
-
-  // Get props for child elements from useSelect
-  let ref = React.useRef();
-  let { labelProps, triggerProps, valueProps, menuProps } = useSelect(
+  const state = useSelectState({ ...props })
+  const ref = useRef(null);
+  const { labelProps, triggerProps, valueProps, menuProps } = useSelect(
     props,
     state,
     ref
@@ -62,9 +57,14 @@ export const InfoSelect = (props: InfoSelectProps) => {
         </span>
       </Button>
       {state.isOpen && (
-        <Popover state={state} triggerRef={ref} placement="bottom start">
+        <Popover isOpen={state.isOpen}
+          onClose={() => state.setOpen(false)}
+          onOpen={() => state.setOpen(true)}
+          closeOnBlur
+          closeOnEsc
+          returnFocusOnClose>
           <ul
-            {...menuProps}
+            {...props}
             ref={ref}
             style={{
               margin: 0,
@@ -75,7 +75,7 @@ export const InfoSelect = (props: InfoSelectProps) => {
               minWidth: 100,
             }}
           >
-            {[...state.collection].map((item) => (
+            {Array.from(state.collection).map((item) => (
               <Option key={item.key} item={item} state={state} />
             ))}
           </ul>
@@ -85,8 +85,9 @@ export const InfoSelect = (props: InfoSelectProps) => {
   );
 };
 
-function Option({ item, state }) {
-  let ref = React.useRef();
+function Option({ item, state }: { item: any, state: SelectState<object> }) {
+  const ref = useRef(null);
+
   let { optionProps, isSelected, isFocused, isDisabled } = useOption(
     { key: item.key },
     state,
@@ -123,24 +124,15 @@ function Option({ item, state }) {
   );
 }
 
-/*export const InfoSelect = ({ label, ...props }: InfoSelectProps) => {
-    const styles = useMultiStyleConfig("Select", props);
-    return (
-        <FormControl>
-            <Box className="select" style={{  // A reset of styles, including removing the default dropdown arrow
-                appearance: "none",
-                // Additional resets for further consistency
-                backgroundColor: "transparent",
-                border: "none",
-                margin: 0,
-                width: "100%",
-                fontFamily: "inherit",
-                fontSize: "inherit",
-                cursor: "inherit"
-            }}>
-                <ChakraSelect {...props} rootProps={{ __css: styles.root, backgroundColor: "red" }} />
-            </Box>
-            {label && <FormLabel>{label}</FormLabel>}
-        </FormControl >
-    );
-};*/
+<InfoSelect label="Favorite Colors">
+  <Item>Red</Item>
+  <Item>Orange</Item>
+  <Item>Yellow</Item>
+  <Item>Green</Item>
+  <Item>Blue</Item>
+  <Item>Purple</Item>
+  <Item>Black</Item>
+  <Item>White</Item>
+  <Item>Lime</Item>
+  <Item>Fushsia</Item>
+</InfoSelect>

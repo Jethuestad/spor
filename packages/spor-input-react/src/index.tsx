@@ -14,5 +14,6 @@ export * from "./RadioGroup";
 export * from "./SearchInput";
 export * from "./Select";
 export * from "./InfoSelect";
+export { Item } from 'react-stately';
 export * from "./Switch";
 export * from "./Textarea";
