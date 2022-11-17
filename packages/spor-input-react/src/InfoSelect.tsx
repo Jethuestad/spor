@@ -1,15 +1,19 @@
 import {
-    Box,
-    Select as ChakraSelect,
-    SelectProps as ChakraSelectProps,
-    useMultiStyleConfig,
+  Box,
+  Select as ChakraSelect,
+  SelectProps as ChakraSelectProps,
+  useMultiStyleConfig,
+  Button,
+  Popover,
 } from "@chakra-ui/react";
 import React from "react";
 import { FormControl, FormLabel } from ".";
+import { HiddenSelect, useSelect } from "react-aria";
+import { useListBox, useOption } from "react-aria";
 
 export type InfoSelectProps = Exclude<
-    ChakraSelectProps,
-    "colorScheme" | "variant" | "size"
+  ChakraSelectProps,
+  "colorScheme" | "variant" | "size"
 > & { label?: string };
 /**
  * Selects let you choose between several options
@@ -26,25 +30,97 @@ export type InfoSelectProps = Exclude<
  * ```
  */
 
-export const InfoSelect = ({ label, ...props }: InfoSelectProps) => {
-    const styles = useMultiStyleConfig("Select", props);
-    return (
-        <Box>
-            {label && <FormLabel>{label}</FormLabel>}
-            <div className="select">
-                <select id="standard-select">
-                    <option value="Option 1">Option 1</option>
-                    <option value="Option 2">Option 2</option>
-                    <option value="Option 3">Option 3</option>
-                    <option value="Option 4">Option 4</option>
-                    <option value="Option 5">Option 5</option>
-                    <option value="Option length">
-                        Option that has too long of a value to fit
-                    </option>
-                </select>
-            </div>
-        </Box>
-    );
+export const InfoSelect = (props: InfoSelectProps) => {
+  // Create state based on the incoming props
+  let state = useSelectState(props);
+
+  // Get props for child elements from useSelect
+  let ref = React.useRef();
+  let { labelProps, triggerProps, valueProps, menuProps } = useSelect(
+    props,
+    state,
+    ref
+  );
+
+  return (
+    <div style={{ display: "inline-block" }}>
+      <div {...labelProps}>{props.label}</div>
+      <HiddenSelect
+        state={state}
+        triggerRef={ref}
+        label={props.label}
+        name={props.name}
+      />
+      <Button {...triggerProps} ref={ref} style={{ height: 30, fontSize: 14 }}>
+        <span {...valueProps}>
+          {state.selectedItem
+            ? state.selectedItem.rendered
+            : "Select an option"}
+        </span>
+        <span aria-hidden="true" style={{ paddingLeft: 5 }}>
+          ▼
+        </span>
+      </Button>
+      {state.isOpen && (
+        <Popover state={state} triggerRef={ref} placement="bottom start">
+          <ul
+            {...menuProps}
+            ref={ref}
+            style={{
+              margin: 0,
+              padding: 0,
+              listStyle: "none",
+              maxHeight: 150,
+              overflow: "auto",
+              minWidth: 100,
+            }}
+          >
+            {[...state.collection].map((item) => (
+              <Option key={item.key} item={item} state={state} />
+            ))}
+          </ul>
+        </Popover>
+      )}
+    </div>
+  );
+};
+
+function Option({ item, state }) {
+  let ref = React.useRef();
+  let { optionProps, isSelected, isFocused, isDisabled } = useOption(
+    { key: item.key },
+    state,
+    ref
+  );
+
+  let backgroundColor;
+  let color = "black";
+
+  if (isSelected) {
+    backgroundColor = "blueviolet";
+    color = "white";
+  } else if (isFocused) {
+    backgroundColor = "gray";
+  } else if (isDisabled) {
+    backgroundColor = "transparent";
+    color = "gray";
+  }
+
+  return (
+    <li
+      {...optionProps}
+      ref={ref}
+      style={{
+        background: backgroundColor,
+        color: color,
+        padding: "2px 5px",
+        outline: "none",
+        cursor: "pointer",
+      }}
+    >
+      {item.rendered}
+    </li>
+  );
 }
 
 /*export const InfoSelect = ({ label, ...props }: InfoSelectProps) => {
