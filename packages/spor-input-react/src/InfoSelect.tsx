@@ -9,10 +9,11 @@ import {
 import React, { useRef } from "react";
 import { FormControl, FormLabel } from ".";
 import { Item, useSelectState, SelectState } from 'react-stately';
-import { AriaSelectOptions, HiddenSelect, useSelect } from "react-aria";
+import { AriaListBoxOptions, AriaSelectOptions, HiddenSelect, useSelect } from "react-aria";
 import { useListBox, useOption } from "react-aria";
 
-export type InfoSelectProps = AriaSelectOptions<typeof Item> & { label?: string };
+export type InfoSelectProps = AriaSelectOptions<object> & { label?: string };
+export type ListBoxProps = AriaListBoxOptions<object>
 /**
  * Selects let you choose between several options
  *
@@ -37,6 +38,10 @@ export const InfoSelect = (props: InfoSelectProps) => {
     ref
   );
 
+  const onClick = () => {
+    state.isOpen ? state.setOpen(false) : state.setOpen(true)
+  }
+
   return (
     <div style={{ display: "inline-block" }}>
       <div {...labelProps}>{props.label}</div>
@@ -46,7 +51,9 @@ export const InfoSelect = (props: InfoSelectProps) => {
         label={props.label}
         name={props.name}
       />
-      <Button {...triggerProps} ref={ref} style={{ height: 30, fontSize: 14 }}>
+      <Button
+        onClick={onClick}
+        {...triggerProps} ref={ref} style={{ height: 30, fontSize: 14 }}>
         <span {...valueProps}>
           {state.selectedItem
             ? state.selectedItem.rendered
@@ -59,37 +66,60 @@ export const InfoSelect = (props: InfoSelectProps) => {
       {state.isOpen && (
         <Popover isOpen={state.isOpen}
           onClose={() => state.setOpen(false)}
-          onOpen={() => state.setOpen(true)}
+          //onOpen={() => state.setOpen(true)}
           closeOnBlur
           closeOnEsc
           returnFocusOnClose>
-          <ul
-            {...props}
-            ref={ref}
-            style={{
-              margin: 0,
-              padding: 0,
-              listStyle: "none",
-              maxHeight: 150,
-              overflow: "auto",
-              minWidth: 100,
-            }}
-          >
-            {Array.from(state.collection).map((item) => (
-              <Option key={item.key} item={item} state={state} />
-            ))}
-          </ul>
+          <ListBox
+            props={menuProps}
+            state={state}
+          />
         </Popover>
       )}
     </div>
   );
 };
 
+function ListBox({ props, state }: { props: AriaListBoxOptions<object>, state: SelectState<object> }) {
+  const ref = useRef(null);
+  const listBoxRef = ref
+  const { listBoxProps } = useListBox(
+    props,
+    state,
+    listBoxRef
+  );
+
+  return (
+    <ul
+      {...listBoxProps}
+      ref={listBoxRef}
+      style={{
+        margin: 0,
+        padding: 0,
+        listStyle: 'none',
+        maxHeight: 150,
+        overflow: 'auto',
+        minWidth: 100
+      }}
+    >
+      {Array.from(state.collection).map((item) => (
+        <Option
+          key={item.key}
+          item={item}
+          state={state}
+        />
+      ))}
+    </ul>
+  );
+}
+
 function Option({ item, state }: { item: any, state: SelectState<object> }) {
   const ref = useRef(null);
 
-  let { optionProps, isSelected, isFocused, isDisabled } = useOption(
-    { key: item.key },
+  const { optionProps, isSelected, isFocused, isDisabled } = useOption(
+    {
+      key: item.key
+    },
     state,
     ref
   );
@@ -123,16 +153,3 @@ function Option({ item, state }: { item: any, state: SelectState<object> }) {
     </li>
   );
 }
-
-<InfoSelect label="Favorite Colors">
-  <Item>Red</Item>
-  <Item>Orange</Item>
-  <Item>Yellow</Item>
-  <Item>Green</Item>
-  <Item>Blue</Item>
-  <Item>Purple</Item>
-  <Item>Black</Item>
-  <Item>White</Item>
-  <Item>Lime</Item>
-  <Item>Fushsia</Item>
-</InfoSelect>
